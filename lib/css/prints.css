@@ -1,0 +1,45 @@
+/* Styles go here */
+
+.printsLogoWrapper{
+  background: #FF0000;
+  height:30px;
+  width:100px;
+}
+
+.floatLeft{
+  float:left;
+}
+
+.widthAuto{
+  width:auto;
+}
+
+.pdbeLogoCol{
+  height:auto;
+  width:auto;
+  margin: 0px 0.1em;
+}
+
+.pdbeLogoCol1Top{
+  margin-top:5%;
+}
+
+.pdbeLogoCol1Bottom{
+  position:absolute;
+  bottom:1px;
+}
+
+.pdbeLogoCol a,
+.pdbeLogoCol a:hover, 
+.pdbeLogoCol a:link, 
+.pdbeLogoCol a:active, 
+.pdbeLogoCol a:visited { 
+  text-decoration: none;
+  cursor: pointer;
+  display:inline-block;
+  height:24px;
+}
+
+.pdbLogoImg {
+    margin: 0;
+}

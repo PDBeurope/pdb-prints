@@ -1,0 +1,95 @@
+<html>
+    <head>
+		<!-- demo css -->
+		<style>
+		code {
+			padding: 2px 4px;
+			font-size: 90%;
+			color: #c7254e;
+			background-color: #f9f2f4;
+			border-radius: 4px;
+		}
+		</style>
+		
+		<!-- AngularJS -->
+		<script src="../../bower_components/angular/angular.min.js"></script>
+		
+		<!-- PDB Prints CSS and core script -->
+		<link rel="stylesheet" href="../../build/pdb.prints.min.css" />
+		<script src="../../build/pdb.prints.min.js"></script>
+		
+		<!-- 
+		If you are developing a non-angularJs Application, 
+		bootstrap 'pdb.prints' module as show below
+		-->
+		<script>
+		(function () {
+		'use strict';
+		angular.element(document).ready(function () {
+			angular.bootstrap(document, ['pdb.prints']);
+		});
+		}());
+		</script>
+		
+    </head>
+    <body>
+		<div style="margin-left:20px">
+			<h3>PDBPrints core bootstrapping demo</h3><hr>
+			
+			<h4>I) Basic usage</h4>
+			<pdb-prints pdb-ids="['1cbs']"></pdb-prints>
+			  
+			<br style="clear:both"><br><code>&lt;pdb-prints pdb-ids="['1cbs']"&gt;&lt;/pdb-prints&gt;</code>
+			
+			<br><br><br>
+			<h4 style="clear:both">II) Using 'settings' attribute</h4>
+			<pdb-prints pdb-ids="['1cbs']" settings='{"orientation": "horizontal", "size": 48 }'></pdb-prints>
+			
+			<br style="clear:both"><br><code>&lt;pdb-prints pdb-ids="['1cbs']" settings='{"orientation": "horizontal", "size": 48 }'&gt;&lt;/pdb-prints&gt;</code>
+			
+			<br><br><br>
+			<h4 style="clear:both">III) Selective logo hiding - "hideLogo" option</h4>
+			<pdb-prints pdb-ids="['1cbs']" settings='{"size": 48, "hideLogo": ["PDBeLogo","PrimaryCitation"] }'></pdb-prints>
+		  
+			<br style="clear:both"><br><code>&lt;pdb-prints pdb-ids="['1cbs']" settings='{"size": 48, "hideLogo": ["PDBeLogo","PrimaryCitation"] }'&gt;&lt;/pdb-prints&gt;</code>
+			
+			<br><br><br>
+			  <h4 style="clear:both">IV) Loading multiple PDBPrints in single API call</h4>
+			  
+			  <div pdb-prints pdb-ids="['1cbs','1tqn']">
+				
+				<div class="proteinSection">
+				  <h5>PDBPrints for 1CBS</h5>
+				  <div class="pdbprints_1cbs"></div>
+				</div>
+				<br><br>
+				<div class="proteinSection">
+				  <h5>PDBPrints for 1TQN</h5>
+				  <div class="pdbprints_1tqn"></div>
+				</div>
+				
+			  </div>
+			  
+			  <br style="clear:both"><br>
+			  
+			  <p>
+				<strong>How to load multiple PDBPrints in a single call?</strong> <br>
+				Add 'pdb-prints' and 'pdb-ids' attribute to the main(parent) &lt;div&gt; as shown in code snippet below.<br>
+				To display it in a specific place, add &lt;div&gt; or &lt;span&gt; and specify its class as "pdbprints_'PDBID'" (example : "pdbprints_1cbs"). <br>If there is no element with class "pdbprints_'PDBID'" then they are appended to the main(parent) &lt;div&gt; by default. Check out the code snippet below :
+			  </p>
+<pre style="width:60%">
+<code>&lt;div pdb-prints pdb-ids="['1cbs','1tqn']"&gt;
+  &lt;div class="proteinSection"&gt;
+    &lt;h5&gt;PDBPrints for 1CBS&lt;/h5&gt;
+    &lt;div class="pdbprints_1cbs"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;div class="proteinSection"&gt;
+    &lt;h5&gt;PDBPrints for 1TQN&lt;/h5&gt;
+    &lt;div class="pdbprints_1tqn"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		  
+		</div>
+	</body>
+</html>
